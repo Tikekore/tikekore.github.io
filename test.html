@@ -1,0 +1,688 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>チケコレ - チケット管理アプリ</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Noto Sans JP', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #ffffff;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .section {
+            padding: 60px 0;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f8bbd9 100%);
+            padding: 60px 0 40px;
+            text-align: center;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.1);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            font-weight: 900;
+            margin-bottom: 0.5rem;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+        }
+
+        .hero .subtitle {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+
+        .hero .description {
+            font-size: 1rem;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .app-store-btn {
+            display: inline-block;
+            background: #000;
+            color: white;
+            padding: 15px 30px;
+            border-radius: 12px;
+            text-decoration: none;
+            font-size: 1.1rem;
+            font-weight: 600;
+            transition: all 0.3s;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+        }
+
+        .app-store-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 35px rgba(0,0,0,0.4);
+        }
+
+        /* Phone mockup in hero */
+        .hero-phone {
+            margin-top: 20px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .phone-mockup {
+            width: 200px;
+            height: 400px;
+            background: #000;
+            border-radius: 25px;
+            padding: 8px;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.4);
+        }
+
+        .phone-screen {
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #f0f4ff, #faf0ff);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #666;
+            font-size: 0.9rem;
+            text-align: center;
+        }
+
+        /* Features Section */
+        .features {
+            background: #f8f9ff;
+        }
+
+        .features h2 {
+            text-align: center;
+            font-size: 2.8rem;
+            margin-bottom: 1rem;
+            color: #333;
+            font-weight: 700;
+        }
+
+        .features-subtitle {
+            text-align: center;
+            font-size: 1.2rem;
+            color: #666;
+            margin-bottom: 4rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+
+        .feature-item {
+            background: white;
+            padding: 3rem 2rem;
+            border-radius: 20px;
+            text-align: center;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+            transition: all 0.3s;
+            border: 1px solid #f0f0ff;
+        }
+
+        .feature-item:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+        }
+
+        .feature-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 2rem;
+            font-size: 2rem;
+            color: white;
+            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3);
+        }
+
+        .feature-item h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: #333;
+            font-weight: 600;
+        }
+
+        .feature-item p {
+            color: #666;
+            line-height: 1.7;
+            font-size: 1rem;
+        }
+
+        /* How it works Section */
+        .how-it-works {
+            background: white;
+        }
+
+        .how-it-works h2 {
+            text-align: center;
+            font-size: 2.8rem;
+            margin-bottom: 1rem;
+            color: #333;
+            font-weight: 700;
+        }
+
+        .how-subtitle {
+            text-align: center;
+            font-size: 1.2rem;
+            color: #666;
+            margin-bottom: 4rem;
+        }
+
+        .steps-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .step {
+            display: flex;
+            align-items: center;
+            margin-bottom: 4rem;
+            gap: 3rem;
+        }
+
+        .step:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+
+        .step-number {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            font-weight: 700;
+            flex-shrink: 0;
+            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3);
+        }
+
+        .step-content {
+            flex: 1;
+        }
+
+        .step-content h3 {
+            font-size: 1.6rem;
+            margin-bottom: 1rem;
+            color: #333;
+            font-weight: 600;
+        }
+
+        .step-content p {
+            color: #666;
+            line-height: 1.7;
+            font-size: 1.1rem;
+        }
+
+        .step-mockup {
+            width: 200px;
+            height: 400px;
+            background: #000;
+            border-radius: 25px;
+            padding: 8px;
+            flex-shrink: 0;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+        }
+
+        .step-screen {
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #f0f4ff, #faf0ff);
+            border-radius: 17px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #666;
+            font-size: 0.8rem;
+            text-align: center;
+            padding: 10px;
+        }
+
+        /* Screenshots Section */
+        .screenshots {
+            background: #f8f9ff;
+        }
+
+        .screenshots h2 {
+            text-align: center;
+            font-size: 2.8rem;
+            margin-bottom: 1rem;
+            color: #333;
+            font-weight: 700;
+        }
+
+        .screenshots-subtitle {
+            text-align: center;
+            font-size: 1.2rem;
+            color: #666;
+            margin-bottom: 4rem;
+        }
+
+        .screenshots-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .screenshot-item {
+            background: #000;
+            border-radius: 25px;
+            padding: 10px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+            transition: transform 0.3s;
+        }
+
+        .screenshot-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .screenshot-placeholder {
+            background: linear-gradient(135deg, #e3f2fd, #f3e5f5);
+            border-radius: 20px;
+            aspect-ratio: 9/16;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #666;
+            font-size: 0.9rem;
+            text-align: center;
+            padding: 20px;
+        }
+
+        /* Download Section */
+        .download {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f8bbd9 100%);
+            color: white;
+            text-align: center;
+        }
+
+        .download h2 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .download p {
+            font-size: 1.3rem;
+            margin-bottom: 3rem;
+            opacity: 0.95;
+        }
+
+        .download .app-store-btn {
+            font-size: 1.2rem;
+            padding: 18px 40px;
+        }
+
+        /* Notice Section */
+        .notice {
+            background: #fff9e6;
+            border-left: 5px solid #f8bbd9;
+            padding: 2rem;
+            margin: 3rem 0;
+            border-radius: 8px;
+        }
+
+        .notice h3 {
+            color: #d63384;
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+
+        .notice p {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        /* Footer */
+        footer {
+            background: #333;
+            color: white;
+            padding: 40px 0;
+            text-align: center;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h3 {
+            margin-bottom: 1rem;
+            color: #f8bbd9;
+            font-size: 1.1rem;
+        }
+
+        .footer-section a {
+            color: #ccc;
+            text-decoration: none;
+            display: block;
+            margin-bottom: 0.5rem;
+            transition: color 0.3s;
+        }
+
+        .footer-section a:hover {
+            color: #f8bbd9;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid #555;
+            padding-top: 2rem;
+            color: #ccc;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero .subtitle {
+                font-size: 1.2rem;
+            }
+
+            .features h2,
+            .how-it-works h2,
+            .screenshots h2,
+            .download h2 {
+                font-size: 2.2rem;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .step {
+                flex-direction: column !important;
+                text-align: center;
+                gap: 2rem;
+            }
+
+            .step-mockup {
+                width: 180px;
+                height: 360px;
+            }
+
+            .phone-mockup {
+                width: 220px;
+                height: 440px;
+            }
+
+            .screenshots-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1.5rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .screenshots-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .phone-mockup {
+                width: 200px;
+                height: 400px;
+            }
+
+            .step-mockup {
+                width: 160px;
+                height: 320px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>チケコレ</h1>
+                <p class="subtitle">ジャニーズファンのための最高のチケット管理アプリ</p>
+                <p class="description">アカウント管理から申込期限まで、すべてのチケット情報を一元管理。複数のツアーやアカウントも楽々管理できます。</p>
+                
+                <a href="#" class="app-store-btn">App Storeからダウンロード</a>
+                
+                <div class="hero-phone">
+                    <div class="phone-mockup">
+                        <div class="phone-screen">
+                            アプリメイン画面<br>
+                            （スクリーンショットをここに配置）
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="features section">
+        <div class="container">
+            <h2>さらに便利に！</h2>
+            <p class="features-subtitle">チケット管理がこんなに簡単になります</p>
+            
+            <div class="features-grid">
+                <div class="feature-item">
+                    <div class="feature-icon">👤</div>
+                    <h3>複数アカウント管理</h3>
+                    <p>FC会員、一般抽選など、複数のアカウント情報を登録して、どのアカウントでチケットを申し込んだかを簡単に管理できます。</p>
+                </div>
+                
+                <div class="feature-item">
+                    <div class="feature-icon">🔔</div>
+                    <h3>期限通知機能</h3>
+                    <p>申込期限や入金期限を設定すると、事前に通知でお知らせ。大切な期限を見逃すことがありません。</p>
+                </div>
+                
+                <div class="feature-item">
+                    <div class="feature-icon">🎫</div>
+                    <h3>ツアー別管理</h3>
+                    <p>同じツアーのチケットをまとめて管理。複数公演の申込状況を一覧で確認できて、とても便利です。</p>
+                </div>
+                
+                <div class="feature-item">
+                    <div class="feature-icon">📊</div>
+                    <h3>複数枚対応</h3>
+                    <p>同じイベントで複数枚のチケットがある場合も、それぞれの当落状況や入金状況を個別に管理できます。</p>
+                </div>
+                
+                <div class="feature-item">
+                    <div class="feature-icon">🎯</div>
+                    <h3>ジ特化設計</h3>
+                    <p>ファンのために特別に設計された、使いやすいインターフェースと便利な機能が満載です。</p>
+                </div>
+                
+                <div class="feature-item">
+                    <div class="feature-icon">🔒</div>
+                    <h3>安全・安心</h3>
+                    <p>あなたの大切なチケット情報を安全に保護。プライバシーを最優先に設計されています。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="how-it-works section">
+        <div class="container">
+            <h2>使い方はとっても簡単！</h2>
+            <p class="how-subtitle">3つのステップでチケット管理を始められます</p>
+            
+            <div class="steps-container">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h3>アプリをダウンロード</h3>
+                        <p>App Storeから「チケコレ」をダウンロードして、アプリを起動してください。初回起動時に簡単な設定を行います。</p>
+                    </div>
+                    <div class="step-mockup">
+                        <div class="step-screen">
+                            ダウンロード画面<br>
+                            ※画面はイメージです
+                        </div>
+                    </div>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h3>アカウント情報を登録</h3>
+                        <p>ファンクラブ会員情報や一般抽選用のアカウント情報を登録します。複数のアカウントを追加することができます。</p>
+                    </div>
+                    <div class="step-mockup">
+                        <div class="step-screen">
+                            アカウント設定画面<br>
+                            ※画面はイメージです
+                        </div>
+                    </div>
+                </div>
+
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h3>チケット情報を入力</h3>
+                        <p>申し込んだチケットの情報と期限を入力すれば完了！期限が近づくと自動で通知が届きます。</p>
+                    </div>
+                    <div class="step-mockup">
+                        <div class="step-screen">
+                            チケット管理画面<br>
+                            ※画面はイメージです
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="screenshots section">
+        <div class="container">
+            <h2>アプリ画面紹介</h2>
+            <p class="screenshots-subtitle">直感的で使いやすいデザインです</p>
+            
+            <div class="screenshots-grid">
+                <div class="screenshot-item">
+                    <div class="screenshot-placeholder">
+                        メイン画面<br>
+                        （実際のスクリーンショットをここに配置してください）
+                    </div>
+                </div>
+                <div class="screenshot-item">
+                    <div class="screenshot-placeholder">
+                        チケット一覧<br>
+                        （実際のスクリーンショットをここに配置してください）
+                    </div>
+                </div>
+                <div class="screenshot-item">
+                    <div class="screenshot-placeholder">
+                        期限通知画面<br>
+                        （実際のスクリーンショットをここに配置してください）
+                    </div>
+                </div>
+                <div class="screenshot-item">
+                    <div class="screenshot-placeholder">
+                        アカウント管理<br>
+                        （実際のスクリーンショットをここに配置してください）
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="download section">
+        <div class="container">
+            <h2>今すぐダウンロード</h2>
+            <p>チケット管理をもっと簡単に、もっと安心に</p>
+            
+            <a href="#" class="app-store-btn">App Storeからダウンロード</a>
+            
+            <div class="notice">
+                <h3>重要なお知らせ</h3>
+                <p>既存のチケコレアプリからのデータ移行は現在対応しておりません。今後のアップデートで対応予定ですが、時期は未定です。新しいアプリでは一から登録していただく必要があります。</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>アプリ情報</h3>
+                    <p>チケコレ - チケット管理アプリ</p>
+                    <p>iOS専用アプリ</p>
+                    <p>ジャニーズファン向け</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>サポート・お問い合わせ</h3>
+                    <a href="mailto:tikekore@gmail.com">tikekore@gmail.com</a>
+                    <a href="privacy-policy.html">プライバシーポリシー</a>
+                    <a href="#faq">よくある質問</a>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>注意事項</h3>
+                    <p>このアプリはチケット管理専用です。</p>
+                    <p>実際のチケット購入機能はありません。</p>
+                    <p>iPhone・iPadでご利用いただけます。</p>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 チケコレ. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
