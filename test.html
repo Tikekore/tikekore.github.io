@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>チケコレ - チケット管理アプリ</title>
+    <title>チケログ - チケット管理アプリ</title>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&display=swap" rel="stylesheet">
     <style>
         * {
@@ -31,7 +31,7 @@
 
         /* Hero Section */
         .hero {
-            background: linear-gradient(135deg, #8fa7ff 0%, #9d7fcc 50%, #ffcce5 100%);
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
             padding: 20px 0;
             color: white;
             position: relative;
@@ -130,135 +130,21 @@
             text-align: center;
         }
 
-
-
         .feature-icon {
-    width: 70px;
-    height: 70px;
-    background: linear-gradient(135deg, #a8e6cf, #88d8c0);
-    border-radius: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0 auto 2rem;
-    position: relative;
-    box-shadow: 0 4px 15px rgba(168, 230, 207, 0.4);
-}
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 2rem;
+            position: relative;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+            font-size: 2rem;
+            color: white;
+        }
 
-/* ユーザーアイコン */
-.icon-user::before {
-    content: '';
-    width: 20px;
-    height: 20px;
-    background: white;
-    border-radius: 50%;
-    position: absolute;
-    top: 15px;
-}
-.icon-user::after {
-    content: '';
-    width: 30px;
-    height: 20px;
-    background: white;
-    border-radius: 15px 15px 0 0;
-    position: absolute;
-    bottom: 10px;
-}
-
-/* ベルアイコン */
-.icon-bell::before {
-    content: '';
-    width: 24px;
-    height: 24px;
-    background: white;
-    border-radius: 50% 50% 0 0;
-    position: absolute;
-}
-.icon-bell::after {
-    content: '';
-    width: 30px;
-    height: 4px;
-    background: white;
-    border-radius: 2px;
-    position: absolute;
-    bottom: 20px;
-}
-
-/* チケットアイコン */
-.icon-ticket::before {
-    content: '';
-    width: 32px;
-    height: 20px;
-    background: white;
-    border-radius: 4px;
-    position: absolute;
-    border-left: 4px dashed transparent;
-    border-right: 4px dashed transparent;
-    box-shadow: inset 0 0 0 2px white;
-}
-
-/* チャートアイコン */
-.icon-chart::before {
-    content: '';
-    width: 8px;
-    height: 20px;
-    background: white;
-    position: absolute;
-    left: 18px;
-    border-radius: 2px;
-}
-.icon-chart::after {
-    content: '';
-    width: 8px;
-    height: 28px;
-    background: white;
-    position: absolute;
-    right: 18px;
-    border-radius: 2px;
-}
-
-/* ターゲットアイコン */
-.icon-target::before {
-    content: '';
-    width: 30px;
-    height: 30px;
-    border: 3px solid white;
-    border-radius: 50%;
-    position: absolute;
-}
-.icon-target::after {
-    content: '';
-    width: 16px;
-    height: 16px;
-    background: white;
-    border-radius: 50%;
-    position: absolute;
-}
-
-/* ロックアイコン */
-.icon-lock::before {
-    content: '';
-    width: 16px;
-    height: 12px;
-    border: 3px solid white;
-    border-bottom: none;
-    border-radius: 8px 8px 0 0;
-    position: absolute;
-    top: 12px;
-}
-.icon-lock::after {
-    content: '';
-    width: 24px;
-    height: 20px;
-    background: white;
-    border-radius: 4px;
-    position: absolute;
-    bottom: 12px;
-}
-        
-
-
-        
         /* Features Section */
         .features {
             background: #f8f9ff;
@@ -302,20 +188,6 @@
         .feature-item:hover {
             transform: translateY(-8px);
             box-shadow: 0 20px 60px rgba(0,0,0,0.15);
-        }
-
-        .feature-icon {
-            width: 80px;
-            height: 80px;
-            background: linear-gradient(135deg, #667eea, #764ba2);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 2rem;
-            font-size: 2rem;
-            color: white;
-            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3);
         }
 
         .feature-item h3 {
@@ -478,7 +350,7 @@
 
         /* Download Section */
         .download {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f8bbd9 100%);
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
             color: white;
             text-align: center;
         }
@@ -503,7 +375,7 @@
         /* Notice Section */
         .notice {
             background: #fff9e6;
-            border-left: 5px solid #f8bbd9;
+            border-left: 5px solid #f093fb;
             padding: 2rem;
             margin: 3rem 0;
             border-radius: 8px;
@@ -537,7 +409,7 @@
 
         .footer-section h3 {
             margin-bottom: 1rem;
-            color: #f8bbd9;
+            color: #f093fb;
             font-size: 1.1rem;
         }
 
@@ -550,7 +422,7 @@
         }
 
         .footer-section a:hover {
-            color: #f8bbd9;
+            color: #f093fb;
         }
 
         .footer-bottom {
@@ -629,10 +501,10 @@
         <div class="container">
             <div class="hero-content">
                 <div class="hero-text">
-                    <h1>チケコレ</h1>
-                    <p class="subtitle">推し活のための最高のチケット管理アプリ</p>
-                    <p class="description">アカウント管理から申込期限まで、すべてのチケット情報を一括管理。</p>
-                    <p class="description">複数のツアーやアカウントも楽々管理できます。</p>
+                    <h1>チケログ</h1>
+                    <p class="subtitle">コンサート・ライブのチケット管理アプリ</p>
+                    <p class="description">申込から参加まで5段階フローで完全管理。</p>
+                    <p class="description">チケット獲得プロセスを効率的に整理しましょう。</p>
                     <a href="#" class="app-store-btn">App Storeからダウンロード</a>
                 </div>
                 
@@ -650,44 +522,44 @@
 
     <section class="features section">
         <div class="container">
-            <h2>さらに便利に！</h2>
-            <p class="features-subtitle">チケット管理がこんなに簡単になります</p>
+            <h2>チケット管理がもっと簡単に！</h2>
+            <p class="features-subtitle">5段階フローで申込から参加まで完全サポート</p>
             
             <div class="features-grid">
                 <div class="feature-item">
-                    <div class="feature-icon icon-user">👤</div>
-                    <h3>複数アカウント管理</h3>
-                    <p>FC会員、一般抽選など、複数のアカウント情報を登録して、どのアカウントでチケットを申し込んだかを簡単に管理できます。</p>
+                    <div class="feature-icon">📝</div>
+                    <h3>5段階フロー管理</h3>
+                    <p>申込 → 抽選 → 入金 → 発券 → 参加の各段階を詳細に追跡。ステータス管理で現在の状況が一目瞭然です。</p>
                 </div>
                 
                 <div class="feature-item">
-                    <div class="feature-icon icon-bell">🔔</div>
+                    <div class="feature-icon">🔔</div>
                     <h3>期限通知機能</h3>
-                    <p>申込期限や入金期限を設定すると、事前に通知でお知らせ。大切な期限を見逃すことがありません。</p>
+                    <p>申込期限、入金期限、発券期限などを設定すると、事前に通知でお知らせ。大切な期限を見逃しません。</p>
                 </div>
                 
                 <div class="feature-item">
-                    <div class="feature-icon icon-ticket">🎫</div>
-                    <h3>ツアー別管理</h3>
-                    <p>同じツアーのチケットをまとめて管理。複数公演の申込状況を一覧で確認できて、とても便利です。</p>
+                    <div class="feature-icon">🎭</div>
+                    <h3>アーティスト・ツアー管理</h3>
+                    <p>お気に入りアーティストのツアー情報をまとめて管理。複数公演の申込状況を一覧で確認できます。</p>
                 </div>
                 
                 <div class="feature-item">
-                    <div class="feature-icon icon-chart">📊</div>
-                    <h3>複数枚対応</h3>
-                    <p>同じイベントで複数枚のチケットがある場合も、それぞれの当落状況や入金状況を個別に管理できます。</p>
+                    <div class="feature-icon">🏢</div>
+                    <h3>会場・座席情報</h3>
+                    <p>コンサート会場の情報と座席詳細を記録。過去の履歴も保存して、次回の参考にできます。</p>
                 </div>
                 
                 <div class="feature-item">
-                    <div class="feature-icon icon-target">🎯</div>
-                    <h3>ファン目線の設計</h3>
-                    <p>エンタメファンのために特別に設計された、使いやすいインターフェースと便利な機能が満載です。</p>
+                    <div class="feature-icon">👤</div>
+                    <h3>アカウント・プラットフォーム管理</h3>
+                    <p>チケット販売サイトのアカウント情報とプラットフォーム情報を整理。申込時の混乱を防げます。</p>
                 </div>
                 
                 <div class="feature-item">
-                    <div class="feature-icon icon-lock">🔒</div>
-                    <h3>安全・安心</h3>
-                    <p>あなたの大切なチケット情報を安全に保護。プライバシーを最優先に設計されています。</p>
+                    <div class="feature-icon">🔒</div>
+                    <h3>プライバシー保護</h3>
+                    <p>すべてのデータはデバイス内に保存。外部サーバーへの送信は一切なく、あなたの情報を安全に保護します。</p>
                 </div>
             </div>
         </div>
@@ -703,11 +575,11 @@
                     <div class="step-number">1</div>
                     <div class="step-content">
                         <h3>アプリをダウンロード</h3>
-                        <p>App Storeから「チケコレ」をダウンロードして、アプリを起動してください。初回起動時に簡単な設定を行います。</p>
+                        <p>App Storeから「チケログ」をダウンロードして、サブスクリプションに登録。すべての機能をご利用いただけます。</p>
                     </div>
                     <div class="step-mockup">
                         <div class="step-screen">
-                            ダウンロード画面<br>
+                            サブスクリプション画面<br>
                             ※画面はイメージです
                         </div>
                     </div>
@@ -716,12 +588,12 @@
                 <div class="step">
                     <div class="step-number">2</div>
                     <div class="step-content">
-                        <h3>アカウント情報を登録</h3>
-                        <p>ファンクラブ会員情報や一般抽選用のアカウント情報を登録します。複数のアカウントを追加することができます。</p>
+                        <h3>基本情報を登録</h3>
+                        <p>アーティスト、会場、アカウント、プラットフォーム情報を登録。一度設定すれば、次回から選択するだけで簡単入力。</p>
                     </div>
                     <div class="step-mockup">
                         <div class="step-screen">
-                            アカウント設定画面<br>
+                            基本設定画面<br>
                             ※画面はイメージです
                         </div>
                     </div>
@@ -730,8 +602,8 @@
                 <div class="step">
                     <div class="step-number">3</div>
                     <div class="step-content">
-                        <h3>チケット情報を入力</h3>
-                        <p>申し込んだチケットの情報と期限を入力すれば完了！期限が近づくと自動で通知が届きます。</p>
+                        <h3>チケット情報を管理</h3>
+                        <p>申し込んだチケットの情報と期限を入力すれば完了！5段階ステータスで進捗を管理し、期限通知で安心です。</p>
                     </div>
                     <div class="step-mockup">
                         <div class="step-screen">
@@ -752,26 +624,26 @@
             <div class="screenshots-grid">
                 <div class="screenshot-item">
                     <div class="screenshot-placeholder">
-                        メイン画面<br>
-                        （実際のスクリーンショットをここに配置してください）
+                        ホーム画面<br>
+                        カレンダー表示
                     </div>
                 </div>
                 <div class="screenshot-item">
                     <div class="screenshot-placeholder">
-                        チケット一覧<br>
-                        （実際のスクリーンショットをここに配置してください）
+                        チケット登録<br>
+                        5段階フロー
                     </div>
                 </div>
                 <div class="screenshot-item">
                     <div class="screenshot-placeholder">
-                        期限通知画面<br>
-                        （実際のスクリーンショットをここに配置してください）
+                        通知管理<br>
+                        期限アラート
                     </div>
                 </div>
                 <div class="screenshot-item">
                     <div class="screenshot-placeholder">
-                        アカウント管理<br>
-                        （実際のスクリーンショットをここに配置してください）
+                        リスト表示<br>
+                        一覧管理
                     </div>
                 </div>
             </div>
@@ -781,13 +653,13 @@
     <section class="download section">
         <div class="container">
             <h2>今すぐダウンロード</h2>
-            <p>チケット管理をもっと簡単に、もっと安心に</p>
+            <p>チケット管理をもっと効率的に、もっと安心に</p>
             
             <a href="#" class="app-store-btn">App Storeからダウンロード</a>
             
             <div class="notice">
                 <h3>重要なお知らせ</h3>
-                <p>既存のチケコレアプリからのデータ移行は現在対応しておりません。今後のアップデートで対応予定ですが、時期は未定です。新しいアプリでは一から登録していただく必要があります。</p>
+                <p>本アプリの全機能をご利用いただくには、サブスクリプション登録が必要です。無料でお試しいただける機能はございませんので、予めご了承ください。App Store経由での安全な決済で、いつでも解約可能です。</p>
             </div>
         </div>
     </section>
@@ -797,28 +669,28 @@
             <div class="footer-content">
                 <div class="footer-section">
                     <h3>アプリ情報</h3>
-                    <p>チケコレ - チケット管理アプリ</p>
+                    <p>チケログ - チケット管理アプリ</p>
                     <p>iOS専用アプリ</p>
-                    <p>ジャニーズファン向け</p>
+                    <p>コンサート・ライブ特化</p>
                 </div>
                 
                 <div class="footer-section">
                     <h3>サポート・お問い合わせ</h3>
-                    <a href="mailto:tikekore@gmail.com">tikekore@gmail.com</a>
-                    <a href="privacy-policy.html">プライバシーポリシー</a>
-                    <a href="#faq">よくある質問</a>
+                    <a href="mailto:ticketlog.contact@gmail.com">ticketlog.contact@gmail.com</a>
+                    <a href="#privacy-policy">プライバシーポリシー</a>
+                    <a href="#terms">利用規約</a>
                 </div>
                 
                 <div class="footer-section">
                     <h3>注意事項</h3>
                     <p>このアプリはチケット管理専用です。</p>
                     <p>実際のチケット購入機能はありません。</p>
-                    <p>iPhone・iPadでご利用いただけます。</p>
+                    <p>全機能サブスクリプション必須です。</p>
                 </div>
             </div>
             
             <div class="footer-bottom">
-                <p>&copy; 2025 チケコレ. All rights reserved.</p>
+                <p>&copy; 2025 チケログ開発者. All rights reserved.</p>
             </div>
         </div>
     </footer>
