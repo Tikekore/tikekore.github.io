@@ -1,0 +1,727 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>プライバシーポリシー - チケログ チケット管理アプリ</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Noto Sans JP', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #ffffff;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+            padding: 60px 0 40px;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.05);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            font-weight: 900;
+            margin-bottom: 0.5rem;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+        }
+
+        .hero .subtitle {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            font-weight: 500;
+            opacity: 0.95;
+        }
+
+        .hero .app-name {
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            opacity: 0.9;
+        }
+
+        .hero .last-updated {
+            font-size: 1rem;
+            opacity: 0.8;
+            font-weight: 300;
+        }
+
+        /* Navigation breadcrumb */
+        .breadcrumb {
+            background: #f8f9ff;
+            padding: 20px 0;
+            border-bottom: 1px solid #e0e7ff;
+        }
+
+        .breadcrumb a {
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .breadcrumb a:hover {
+            color: #764ba2;
+        }
+
+        .breadcrumb span {
+            color: #666;
+            margin: 0 10px;
+        }
+
+        /* Main Content */
+        .privacy-content {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 60px 20px;
+            background: white;
+        }
+
+        /* Privacy sections */
+        .privacy-section {
+            margin-bottom: 3rem;
+        }
+
+        .privacy-section h2 {
+            font-size: 1.8rem;
+            color: #333;
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+            padding-left: 20px;
+            border-left: 5px solid #f093fb;
+            background: linear-gradient(90deg, #f8f9ff 0%, transparent 100%);
+            padding: 15px 0 15px 20px;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .privacy-section h3 {
+            font-size: 1.4rem;
+            color: #333;
+            margin-bottom: 1rem;
+            font-weight: 600;
+            margin-top: 2rem;
+        }
+
+        .privacy-section h4 {
+            font-size: 1.2rem;
+            color: #333;
+            margin-bottom: 1rem;
+            font-weight: 600;
+            margin-top: 1.5rem;
+        }
+
+        .privacy-section p {
+            margin-bottom: 1rem;
+            line-height: 1.8;
+            color: #444;
+        }
+
+        .privacy-section ul {
+            margin-bottom: 1rem;
+            padding-left: 2rem;
+        }
+
+        .privacy-section li {
+            margin-bottom: 0.8rem;
+            line-height: 1.7;
+            color: #444;
+        }
+
+        /* Important notice styling */
+        .important-notice {
+            background: linear-gradient(135deg, #e8f5e8, #f0fff0);
+            border: 2px solid #4caf50;
+            border-radius: 12px;
+            padding: 2rem;
+            margin: 2rem 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .important-notice::before {
+            content: '🔒';
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 1.5rem;
+            opacity: 0.7;
+        }
+
+        .important-notice h3 {
+            color: #2e7d32;
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+            font-weight: 700;
+        }
+
+        .important-notice p {
+            color: #388e3c;
+            line-height: 1.7;
+            font-weight: 500;
+        }
+
+        /* Warning notice styling */
+        .warning-notice {
+            background: linear-gradient(135deg, #fff3e0, #fff8e1);
+            border: 2px solid #ff9800;
+            border-radius: 12px;
+            padding: 2rem;
+            margin: 2rem 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .warning-notice::before {
+            content: '⚠️';
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 1.5rem;
+            opacity: 0.7;
+        }
+
+        .warning-notice h3 {
+            color: #e65100;
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+            font-weight: 700;
+        }
+
+        .warning-notice p {
+            color: #f57c00;
+            line-height: 1.7;
+        }
+
+        /* Data protection highlight */
+        .data-protection {
+            background: linear-gradient(135deg, #e3f2fd, #f3e5f5);
+            border: 2px solid #2196f3;
+            border-radius: 12px;
+            padding: 2rem;
+            margin: 2rem 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .data-protection::before {
+            content: '📱';
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 1.5rem;
+            opacity: 0.7;
+        }
+
+        .data-protection h3 {
+            color: #1976d2;
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+            font-weight: 700;
+        }
+
+        .data-protection p {
+            color: #1976d2;
+            line-height: 1.7;
+            font-weight: 500;
+        }
+
+        /* Contact section styling */
+        .contact-section {
+            background: linear-gradient(135deg, #e3f2fd, #f3e5f5);
+            border-radius: 15px;
+            padding: 2.5rem;
+            margin: 3rem 0;
+            text-align: center;
+            border: 1px solid #e0e7ff;
+        }
+
+        .contact-section h3 {
+            color: #333;
+            margin-bottom: 1.5rem;
+            font-size: 1.4rem;
+            font-weight: 600;
+        }
+
+        .contact-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .contact-item {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+        }
+
+        .contact-item strong {
+            color: #667eea;
+            font-weight: 600;
+        }
+
+        /* Rights section styling */
+        .rights-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .rights-item {
+            background: linear-gradient(135deg, #f8f9ff, #fff);
+            border: 1px solid #e0e7ff;
+            border-radius: 10px;
+            padding: 1.5rem;
+            transition: all 0.3s;
+        }
+
+        .rights-item:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.15);
+        }
+
+        .rights-item h4 {
+            color: #667eea;
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+            font-weight: 600;
+        }
+
+        .rights-item p {
+            color: #666;
+            font-size: 0.95rem;
+        }
+
+        /* Back to top button */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+            transition: all 0.3s;
+            font-size: 1.2rem;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        .back-to-top.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .back-to-top:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.6);
+        }
+
+        /* Footer */
+        footer {
+            background: #333;
+            color: white;
+            padding: 40px 0;
+            text-align: center;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h3 {
+            margin-bottom: 1rem;
+            color: #f093fb;
+            font-size: 1.1rem;
+        }
+
+        .footer-section a {
+            color: #ccc;
+            text-decoration: none;
+            display: block;
+            margin-bottom: 0.5rem;
+            transition: color 0.3s;
+        }
+
+        .footer-section a:hover {
+            color: #f093fb;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid #555;
+            padding-top: 2rem;
+            color: #ccc;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero .subtitle {
+                font-size: 1.3rem;
+            }
+
+            .privacy-content {
+                padding: 40px 15px;
+            }
+
+            .privacy-section h2 {
+                font-size: 1.5rem;
+            }
+
+            .privacy-section h3 {
+                font-size: 1.2rem;
+            }
+
+            .contact-info {
+                grid-template-columns: 1fr;
+            }
+
+            .rights-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero .subtitle {
+                font-size: 1.1rem;
+            }
+
+            .privacy-section h2 {
+                font-size: 1.3rem;
+                padding-left: 15px;
+            }
+
+            .important-notice,
+            .warning-notice,
+            .data-protection,
+            .contact-section {
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <p class="subtitle">プライバシーポリシー</p>
+                <p class="subtitle">Privacy Policy</p>
+                <p class="app-name">チケログ-チケット管理</p>
+                <p class="last-updated">最終更新日：2025年8月25日</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="breadcrumb">
+        <div class="container">
+            <a href="/">ホーム</a>
+            <span>›</span>
+            <span>プライバシーポリシー</span>
+        </div>
+    </section>
+
+    <div class="privacy-content">
+        <div class="privacy-section">
+            <h2>1. はじめに</h2>
+            <p>チケログ開発者（以下「当開発者」といいます）は、iOSアプリケーション「チケログ-チケット管理」（以下「本アプリ」といいます）における利用者（以下「ユーザー」といいます）のプライバシー保護を重要視しており、個人情報の適切な取り扱いに努めています。</p>
+            <p>本プライバシーポリシーは、本アプリにおける個人情報およびデータの収集、利用、保護について説明するものです。</p>
+        </div>
+
+        <div class="privacy-section">
+            <h2>2. 収集する情報</h2>
+            
+            <h3>2.1 ユーザーが入力する情報</h3>
+            <p>本アプリでは、ユーザーが以下の情報を任意で入力できます：</p>
+            <ul>
+                <li><strong>イベント情報</strong>：コンサート・ライブの名称、日時、会場等</li>
+                <li><strong>チケット情報</strong>：チケット番号、座席情報、価格等</li>
+                <li><strong>申込情報</strong>：申込日時、ステータス、申込先等</li>
+                <li><strong>アーティスト情報</strong>：アーティスト名、グループ名等</li>
+                <li><strong>会場情報</strong>：会場名、所在地、収容人数等</li>
+                <li><strong>アカウント情報</strong>：チケット販売サイトのアカウント名等</li>
+                <li><strong>その他</strong>：メモ、通知設定等</li>
+            </ul>
+
+            <div class="important-notice">
+                <h3>重要な方針</h3>
+                <p><strong>当開発者は、ユーザーの個人情報や利用状況を意図的に収集することはありません。</strong></p>
+            </div>
+
+            <h3>2.2 当開発者が収集しない情報</h3>
+            <p>ただし、以下の情報については、iOSシステムまたはApp Storeの仕組みにより、当開発者の関与なく処理される場合があります：</p>
+            <ul>
+                <li><strong>クラッシュレポート</strong>：アプリの不具合発生時、Appleが自動収集する場合があります</li>
+                <li><strong>サブスクリプション情報</strong>：購入状況はAppleにより管理されます</li>
+                <li><strong>基本的なアプリ分析情報</strong>：App Storeの標準機能による（ユーザーがiOS設定で無効化可能）</li>
+            </ul>
+
+            <h3>2.3 収集しない情報</h3>
+            <p>本アプリは以下の情報は収集いたしません：</p>
+            <ul>
+                <li>位置情報</li>
+                <li>カメラ・マイクへのアクセス</li>
+                <li>連絡先、カレンダー等の個人データ</li>
+                <li>他のアプリの利用状況</li>
+            </ul>
+        </div>
+
+        <div class="privacy-section">
+            <h2>3. 情報の利用目的</h2>
+            <p>収集した情報は、以下の目的で利用します：</p>
+            <ul>
+                <li><strong>アプリ機能の提供</strong>：チケット管理、通知機能の提供</li>
+                <li><strong>サブスクリプション管理</strong>：購入状況の確認、機能制御</li>
+                <li><strong>アプリの改善</strong>：不具合修正、機能向上</li>
+                <li><strong>カスタマーサポート</strong>：お問い合わせへの対応</li>
+            </ul>
+        </div>
+
+        <div class="privacy-section">
+            <h2>4. 情報の保存場所</h2>
+            
+            <div class="data-protection">
+                <h3>4.1 ローカル保存</h3>
+                <p>ユーザーが入力したすべてのデータは、<strong>ユーザーのデバイス内にのみ保存</strong>されます。当開発者の外部サーバーへのデータ送信は行いません。データは本アプリ専用の安全な領域に保存されます。</p>
+            </div>
+
+            <h3>4.2 Apple による保存</h3>
+            <ul>
+                <li>サブスクリプション情報は、Apple Inc. により管理されます</li>
+                <li>アプリのクラッシュレポート等は、Appleのシステムにより収集される場合があります</li>
+            </ul>
+        </div>
+
+        <div class="privacy-section">
+            <h2>5. 第三者への提供</h2>
+            
+            <h3>5.1 提供しない情報</h3>
+            <p>当開発者は、以下を除き、ユーザーの個人情報を第三者に提供することはありません：</p>
+
+            <h3>5.2 Apple Inc. との情報共有</h3>
+            <p>以下の情報は、App Storeの運営およびサブスクリプション管理のため、Apple Inc. と共有されます：</p>
+            <ul>
+                <li>サブスクリプションの購入・更新情報</li>
+                <li>アプリのクラッシュレポート（Appleが自動収集）</li>
+                <li>App Storeでの評価・レビュー</li>
+            </ul>
+
+            <h3>5.3 法的要請への対応</h3>
+            <p>法令に基づく開示要請がある場合、必要最小限の範囲で情報を提供することがあります。</p>
+        </div>
+
+        <div class="privacy-section">
+            <h2>6. 通知機能</h2>
+            
+            <h3>6.1 ローカル通知</h3>
+            <ul>
+                <li>本アプリは、ユーザーの許可に基づき、デバイス内でローカル通知を生成します</li>
+                <li>通知内容は外部に送信されません</li>
+                <li>通知設定は、iOSの設定画面またはアプリ内で変更可能です</li>
+            </ul>
+
+            <div class="warning-notice">
+                <h3>6.2 通知の制限</h3>
+                <p>デバイスのスリープモード、省電力設定等により通知が表示されない場合があります。当開発者は通知の確実な配信を保証しません。</p>
+            </div>
+        </div>
+
+        <div class="privacy-section">
+            <h2>7. データの保護</h2>
+            
+            <h3>7.1 セキュリティ対策</h3>
+            <ul>
+                <li>データはiOSの標準的なセキュリティ機能により保護されます</li>
+                <li>アプリ固有の保護領域にデータを保存します</li>
+                <li>適切な暗号化技術を使用します</li>
+            </ul>
+
+            <h3>7.2 データの保存期間</h3>
+            <ul>
+                <li>データは、ユーザーがアプリを削除するまで保存されます</li>
+                <li>アプリ削除時に、すべてのデータは自動的に削除されます</li>
+            </ul>
+        </div>
+
+        <div class="privacy-section">
+            <h2>8. ユーザーの権利</h2>
+            
+            <h3>8.1 データの管理</h3>
+            <p>ユーザーは、自分のデータについて以下の権利を有します：</p>
+            
+            <div class="rights-grid">
+                <div class="rights-item">
+                    <h4>閲覧権</h4>
+                    <p>アプリ内で自分のデータを確認できます</p>
+                </div>
+                <div class="rights-item">
+                    <h4>編集権</h4>
+                    <p>アプリ内でデータを自由に編集できます</p>
+                </div>
+                <div class="rights-item">
+                    <h4>削除権</h4>
+                    <p>アプリ内でデータを削除できます</p>
+                </div>
+                <div class="rights-item">
+                    <h4>エクスポート権</h4>
+                    <p>将来的な機能として検討中です</p>
+                </div>
+            </div>
+
+            <h3>8.2 アプリの削除</h3>
+            <ul>
+                <li>アプリを削除することで、すべてのデータを完全に削除できます</li>
+                <li>サブスクリプションの解約は、別途iOSの設定から行う必要があります</li>
+            </ul>
+        </div>
+
+        <div class="privacy-section">
+            <h2>9. 子どものプライバシー</h2>
+            <p>本アプリは、13歳未満の子どもを対象としていません。13歳未満の子どもから故意に個人情報を収集することはありません。</p>
+            <p>保護者の方で、お子様が個人情報を提供していることが判明した場合は、直ちにご連絡ください。</p>
+        </div>
+
+        <div class="privacy-section">
+            <h2>10. プライバシーポリシーの変更</h2>
+            
+            <h3>10.1 変更について</h3>
+            <p>当開発者は、本プライバシーポリシーを随時更新することがあります。</p>
+
+            <h3>10.2 変更通知</h3>
+            <p>重要な変更がある場合は、以下の方法で通知します：</p>
+            <ul>
+                <li>アプリ内での通知</li>
+                <li>本ポリシーの「最終更新日」の更新</li>
+            </ul>
+
+            <h3>10.3 変更後の利用</h3>
+            <p>変更後もアプリを継続利用する場合、新しいプライバシーポリシーに同意したものとみなされます。</p>
+        </div>
+
+        <div class="contact-section">
+            <h3>11. お問い合わせ</h3>
+            <p>本プライバシーポリシーに関するご質問、ご意見、個人情報の取り扱いに関するお問い合わせは、以下までご連絡ください：</p>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <strong>メール：</strong><br>
+                    ticketlog.contact@gmail.com
+                </div>
+                <div class="contact-item">
+                    <strong>開発者：</strong><br>
+                    チケログ開発者
+                </div>
+                <div class="contact-item">
+                    <strong>所在地：</strong><br>
+                    日本国千葉県
+                </div>
+            </div>
+        </div>
+
+        <div class="privacy-section">
+            <h2>12. 適用法令</h2>
+            <p>本プライバシーポリシーは、日本国の個人情報保護法その他の関連法令に基づいて作成されています。</p>
+            <p style="margin-top: 2rem; font-weight: 600; text-align: center;">制定日：2025年8月25日</p>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>アプリ情報</h3>
+                    <p>チケログ - チケット管理アプリ</p>
+                    <p>iOS専用アプリ</p>
+                    <p>コンサート・ライブ特化</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>サポート・お問い合わせ</h3>
+                    <a href="mailto:ticketlog.contact@gmail.com">ticketlog.contact@gmail.com</a>
+                    <a href="/privacy">プライバシーポリシー</a>
+                    <a href="/terms">利用規約</a>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>注意事項</h3>
+                    <p>このアプリはチケット管理専用です。</p>
+                    <p>実際のチケット購入機能はありません。</p>
+                    <p>全機能サブスクリプション必須です。</p>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 チケログ開発者. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <a href="#" class="back-to-top" id="backToTop">↑</a>
+
+    <script>
+        // Back to top button functionality
+        window.addEventListener('scroll', function() {
+            const backToTop = document.getElementById('backToTop');
+            if (window.pageYOffset > 300) {
+                backToTop.classList.add('visible');
+            } else {
+                backToTop.classList.remove('visible');
+            }
+        });
+
+        document.getElementById('backToTop').addEventListener('click', function(e) {
+            e.preventDefault();
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    </script>
+</body>
+</html>
