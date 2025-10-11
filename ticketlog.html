@@ -32,7 +32,7 @@
         /* Hero Section */
         .hero {
             background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
-            padding: 20px 0;
+            padding: 80px 0;
             color: white;
             position: relative;
             overflow: hidden;
@@ -51,83 +51,48 @@
         .hero-content {
             position: relative;
             z-index: 2;
-            display: flex;
-            align-items: center;
-            gap: 3rem;
-            min-height: 400px;
-        }
-
-        .hero-text {
-            flex: 1;
-            text-align: left;
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
         }
 
         .hero h1 {
-            font-size: 3rem;
+            font-size: 3.5rem;
             font-weight: 900;
-            margin-bottom: 0.5rem;
+            margin-bottom: 1rem;
             text-shadow: 0 2px 10px rgba(0,0,0,0.3);
         }
 
         .hero .subtitle {
-            font-size: 1.2rem;
-            margin-bottom: 1rem;
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
             font-weight: 500;
         }
 
         .hero .description {
-            font-size: 1rem;
-            margin-bottom: 2rem;
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
             opacity: 0.95;
-            line-height: 1.6;
+            line-height: 1.8;
         }
 
         .app-store-btn {
             display: inline-block;
             background: #000;
             color: white;
-            padding: 15px 30px;
+            padding: 18px 40px;
             border-radius: 12px;
             text-decoration: none;
             font-size: 1.1rem;
             font-weight: 600;
             transition: all 0.3s;
             box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+            margin-top: 2rem;
         }
 
         .app-store-btn:hover {
             transform: translateY(-3px);
             box-shadow: 0 12px 35px rgba(0,0,0,0.4);
-        }
-
-        /* Phone mockup in hero */
-        .hero-phone {
-            flex-shrink: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .phone-mockup {
-            width: 200px;
-            height: 400px;
-            background: #000;
-            border-radius: 25px;
-            padding: 8px;
-            box-shadow: 0 20px 50px rgba(0,0,0,0.4);
-        }
-
-        .phone-screen {
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(135deg, #f0f4ff, #faf0ff);
-            border-radius: 20px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #666;
-            font-size: 0.9rem;
-            text-align: center;
         }
 
         .feature-icon {
@@ -271,92 +236,6 @@
             font-size: 1.1rem;
         }
 
-        .step-mockup {
-            width: 200px;
-            height: 400px;
-            background: #000;
-            border-radius: 25px;
-            padding: 8px;
-            flex-shrink: 0;
-            box-shadow: 0 15px 40px rgba(0,0,0,0.2);
-        }
-
-        .step-screen {
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(135deg, #f0f4ff, #faf0ff);
-            border-radius: 17px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #666;
-            font-size: 0.8rem;
-            text-align: center;
-            padding: 10px;
-        }
-
-        /* Screenshots Section */
-        .screenshots {
-            background: #f8f9ff;
-        }
-        
-        .phone-screen img,
-.step-screen img,
-.screenshot-placeholder img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: inherit;
-}
-
-        .screenshots h2 {
-            text-align: center;
-            font-size: 2.8rem;
-            margin-bottom: 1rem;
-            color: #333;
-            font-weight: 700;
-        }
-
-        .screenshots-subtitle {
-            text-align: center;
-            font-size: 1.2rem;
-            color: #666;
-            margin-bottom: 4rem;
-        }
-
-        .screenshots-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            max-width: 1000px;
-            margin: 0 auto;
-        }
-
-        .screenshot-item {
-            background: #000;
-            border-radius: 25px;
-            padding: 10px;
-            box-shadow: 0 15px 40px rgba(0,0,0,0.2);
-            transition: transform 0.3s;
-        }
-
-        .screenshot-item:hover {
-            transform: translateY(-5px);
-        }
-
-        .screenshot-placeholder {
-            background: linear-gradient(135deg, #e3f2fd, #f3e5f5);
-            border-radius: 20px;
-            aspect-ratio: 9/16;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #666;
-            font-size: 0.9rem;
-            text-align: center;
-            padding: 20px;
-        }
-
         /* Download Section */
         .download {
             background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
@@ -434,6 +313,11 @@
             color: #f093fb;
         }
 
+        .footer-section p {
+            color: #ccc;
+            margin-bottom: 0.5rem;
+        }
+
         .footer-bottom {
             border-top: 1px solid #555;
             padding-top: 2rem;
@@ -452,7 +336,6 @@
 
             .features h2,
             .how-it-works h2,
-            .screenshots h2,
             .download h2 {
                 font-size: 2.2rem;
             }
@@ -467,40 +350,11 @@
                 text-align: center;
                 gap: 2rem;
             }
-
-            .step-mockup {
-                width: 180px;
-                height: 360px;
-            }
-
-            .phone-mockup {
-                width: 220px;
-                height: 440px;
-            }
-
-            .screenshots-grid {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 1.5rem;
-            }
         }
 
         @media (max-width: 480px) {
             .hero h1 {
                 font-size: 2rem;
-            }
-
-            .screenshots-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .phone-mockup {
-                width: 200px;
-                height: 400px;
-            }
-
-            .step-mockup {
-                width: 160px;
-                height: 320px;
             }
         }
     </style>
@@ -509,22 +363,11 @@
     <section class="hero">
         <div class="container">
             <div class="hero-content">
-                <div class="hero-text">
-                    <h1>チケログ</h1>
-                    <p class="subtitle">コンサート・ライブのチケット管理アプリ</p>
-                    <p class="description">イベント発表から発券まで一連のフローで完全管理。</p>
-                    <p class="description">チケット獲得プロセスを効率的に整理しましょう。</p>
-                    <a href="#" class="app-store-btn">App Storeからダウンロード</a>
-                </div>
-                
-                <div class="hero-phone">
-                    <div class="phone-mockup">
-                        <div class="phone-screen">
-                            
-                            <img src="images/IMG_3471.PNG" alt="アプリメイン画面">
-                        </div>
-                    </div>
-                </div>
+                <h1>チケログ</h1>
+                <p class="subtitle">コンサート・ライブのチケット管理アプリ</p>
+                <p class="description">イベント発表から発券まで一連のフローで完全管理。</p>
+                <p class="description">チケット獲得プロセスを効率的に整理しましょう。</p>
+                <a href="#" class="app-store-btn">App Storeからダウンロード</a>
             </div>
         </div>
     </section>
@@ -586,12 +429,6 @@
                         <h3>アプリをダウンロード</h3>
                         <p>App Storeから「チケログ」をダウンロードして、サブスクリプションに登録。すべての機能をご利用いただけます。</p>
                     </div>
-                    <div class="step-mockup">
-                        <div class="step-screen">
-                            サブスクリプション画面<br>
-                            ※画面はイメージです
-                        </div>
-                    </div>
                 </div>
 
                 <div class="step">
@@ -600,12 +437,6 @@
                         <h3>基本情報を登録</h3>
                         <p>アーティスト、会場、アカウント、プラットフォーム情報を登録。一度設定すれば、次回から選択するだけで簡単入力。</p>
                     </div>
-                    <div class="step-mockup">
-                        <div class="step-screen">
-                            基本設定画面<br>
-                            ※画面はイメージです
-                        </div>
-                    </div>
                 </div>
 
                 <div class="step">
@@ -613,46 +444,6 @@
                     <div class="step-content">
                         <h3>チケット情報を管理</h3>
                         <p>申し込んだチケットの情報と期限を入力すれば完了！フロー管理で進捗を管理し、期限通知で安心です。</p>
-                    </div>
-                    <div class="step-mockup">
-                        <div class="step-screen">
-                            チケット管理画面<br>
-                            ※画面はイメージです
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="screenshots section">
-        <div class="container">
-            <h2>アプリ画面紹介</h2>
-            <p class="screenshots-subtitle">直感的で使いやすいデザインです</p>
-            
-            <div class="screenshots-grid">
-                <div class="screenshot-item">
-                    <div class="screenshot-placeholder">
-                        ホーム画面<br>
-                        カレンダー表示
-                    </div>
-                </div>
-                <div class="screenshot-item">
-                    <div class="screenshot-placeholder">
-                        チケット登録<br>
-                        フロー管理
-                    </div>
-                </div>
-                <div class="screenshot-item">
-                    <div class="screenshot-placeholder">
-                        通知管理<br>
-                        期限アラート
-                    </div>
-                </div>
-                <div class="screenshot-item">
-                    <div class="screenshot-placeholder">
-                        リスト表示<br>
-                        一覧管理
                     </div>
                 </div>
             </div>
